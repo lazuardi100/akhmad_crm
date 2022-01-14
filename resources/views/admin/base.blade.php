@@ -11,7 +11,8 @@
     <!-- ========== All CSS files linkup ========= -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/vendor/plainadmin/css/lineicons.css" />
     <link rel="stylesheet" href="/vendor/plainadmin/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="/vendor/plainadmin/css/main.css" />
@@ -31,15 +32,21 @@
         <nav class="sidebar-nav">
             <ul>
                 <li class="nav-item">
-                    <a class="link" href={{route('dashboard.calonCus')}}>
+                    <a class="link" href={{ route('dashboard.calonCus') }}>
                         <i class="ri-customer-service-line"></i>
                         <span class="text ml-3">Calon Customer</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="link" href='#'>
+                    <a class="link" href={{ route('dashboard.customer') }}>
                         <i class="ri-customer-service-2-line"></i>
                         <span class="text ml-3">Customer</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="link" href={{ route('dashboard.customer') }}>
+                        <i class="ri-archive-line"></i>
+                        <span class="text ml-3">Produk</span>
                     </a>
                 </li>
 
@@ -145,6 +152,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     {{-- <script src="/vendor/plainadmin/js/Chart.min.js"></script>
     <script src="/vendor/plainadmin/js/dynamic-pie-chart.js"></script>
     <script src="/vendor/plainadmin/js/moment.min.js"></script>

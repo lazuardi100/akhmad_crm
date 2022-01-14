@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ Route::get('/', function () {
 Route::prefix('dashboard/')->group(function(){
     Route::name('dashboard.')->group(function(){
         Route::get('calon', [CustomerController::class, 'showCalon'])->name('calonCus');
+        Route::get('customer', [CustomerController::class, 'showCustomer'])->name('customer');
+        Route::get('product', [ProductController::class, 'show'])->name('customer');
     });
 });
 
