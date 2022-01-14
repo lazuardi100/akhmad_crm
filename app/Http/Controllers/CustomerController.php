@@ -9,9 +9,12 @@ class CustomerController extends Controller
 {
     public function showCalon(){
         $data = DB::table('CUSTOMER')
-            ->where('ID_STATUS', 1)
+            ->join('STATUS_CUSTOMER', 'STATUS_CUSTOMER.ID_STATUS', 
+                '=', 'CUSTOMER.ID_STATUS')
+            ->where('STATUS_CUSTOMER.ID_STATUS', 1)
+            ->orWhere('STATUS_CUSTOMER.ID_STATUS', 3)
             ->get();
-
+        // dd($data);
         return view('admin.calon_customer', ['datas'=>$data]);
     }
 

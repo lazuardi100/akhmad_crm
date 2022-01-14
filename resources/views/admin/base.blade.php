@@ -31,7 +31,7 @@
         <nav class="sidebar-nav">
             <ul>
                 <li class="nav-item">
-                    <a class="link" href='#'>
+                    <a class="link" href={{route('dashboard.calonCus')}}>
                         <i class="ri-customer-service-line"></i>
                         <span class="text ml-3">Calon Customer</span>
                     </a>

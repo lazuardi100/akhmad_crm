@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.calon_customer');
+    return redirect()->route('dashboard.calonCus');
 });
 
 Route::prefix('dashboard/')->group(function(){
