@@ -31,31 +31,34 @@
         </div>
         <nav class="sidebar-nav">
             <ul>
-                <li class="nav-item">
-                    <a class="link" href={{ route('dashboard.calonCus') }}>
-                        <i class="ri-customer-service-line"></i>
-                        <span class="text ml-3">Calon Customer</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="link" href={{ route('dashboard.customer') }}>
-                        <i class="ri-customer-service-2-line"></i>
-                        <span class="text ml-3">Customer</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="link" href={{ route('dashboard.product') }}>
-                        <i class="ri-archive-line"></i>
-                        <span class="text ml-3">Produk</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="link" href={{route('dashboard.approval')}}>
-                        <i class="ri-shield-check-line"></i>
-                        <span class="text ml-3">Approval</span>
-                    </a>
-                </li>
-
+                @if (session()->get('role') == 1)
+                    <li class="nav-item">
+                        <a class="link" href={{ route('dashboard.calonCus') }}>
+                            <i class="ri-customer-service-line"></i>
+                            <span class="text ml-3">Calon Customer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href={{ route('dashboard.customer') }}>
+                            <i class="ri-customer-service-2-line"></i>
+                            <span class="text ml-3">Customer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href={{ route('dashboard.product') }}>
+                            <i class="ri-archive-line"></i>
+                            <span class="text ml-3">Produk</span>
+                        </a>
+                    </li>
+                @endif
+                @if (session()->get('role') == 2)
+                    <li class="nav-item">
+                        <a class="link" href={{ route('dashboard.approval') }}>
+                            <i class="ri-shield-check-line"></i>
+                            <span class="text ml-3">Approval</span>
+                        </a>
+                    </li>
+                @endif
                 <span class="divider">
                     <hr />
                 </span>
@@ -107,7 +110,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                                     <li>
-                                        <a href={{route('auth.logout')}}> <i class="lni lni-exit"></i> Sign Out
+                                        <a href={{ route('auth.logout') }}> <i class="lni lni-exit"></i> Sign Out
                                         </a>
                                     </li>
                                 </ul>
