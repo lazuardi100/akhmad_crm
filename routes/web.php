@@ -23,12 +23,13 @@ Route::prefix('dashboard/')->group(function(){
     Route::name('dashboard.')->group(function(){
         Route::get('calon', [CustomerController::class, 'showCalon'])->name('calonCus');
         Route::get('customer', [CustomerController::class, 'showCustomer'])->name('customer');
-        Route::get('product', [ProductController::class, 'show'])->name('customer');
+        Route::get('product', [ProductController::class, 'show'])->name('product');
     });
 });
 
 Route::prefix('submit/')->group(function(){
     Route::name('submit.')->group(function(){
         Route::post('calon_customer',  [CustomerController::class, 'storeCalon'])->name('calon.customer');
+        Route::post('product',  [ProductController::class, 'store'])->name('product');
     });
 });

@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="link" href={{ route('dashboard.customer') }}>
+                    <a class="link" href={{ route('dashboard.product') }}>
                         <i class="ri-archive-line"></i>
                         <span class="text ml-3">Produk</span>
                     </a>
