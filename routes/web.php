@@ -41,3 +41,10 @@ Route::prefix('dashboard/')->group(function(){
         Route::get('approval', [ApprovalController::class, 'show'])->name('approval');
     });
 });
+
+Route::prefix('submit/')->group(function(){
+    Route::name('submit.')->group(function(){
+        Route::get('approve/{id}',  [ApprovalController::class, 'approve'])->name('approve');
+        Route::get('reject/{id}',  [ApprovalController::class, 'reject'])->name('reject');
+    });
+});

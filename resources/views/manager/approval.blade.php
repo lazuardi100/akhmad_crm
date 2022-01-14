@@ -17,13 +17,14 @@
                 </thead>
                 <tbody>
                     @foreach ($datas as $data)
-                    <tr>
-                        <td>{{ $data->NAMA_CUSTOMER }}</td>
-                        <td>{{ $data->TELP }}</td>
-                        <td>{{ $data->PRODUCT }}</td>
-                        <td><button onclick="approve('{{$data->ID_CUSTOMER}}')" class="btn btn-success"><i class="ri-check-line"></i></button></td>
-                        <td><button class="btn btn-danger"><i class="ri-close-line"></i></button></td>
-                    </tr>
+                        <tr>
+                            <td>{{ $data->NAMA_CUSTOMER }}</td>
+                            <td>{{ $data->TELP }}</td>
+                            <td>{{ $data->PRODUCT }}</td>
+                            <td><button onclick="approve('{{ $data->ID_CUSTOMER }}', '{{ $data->NAMA_CUSTOMER }}')"
+                                    class="btn btn-success"><i class="ri-check-line"></i></button></td>
+                            <td><button onclick="reject('{{ $data->ID_CUSTOMER }}', '{{ $data->NAMA_CUSTOMER }}')" class="btn btn-danger"><i class="ri-close-line"></i></button></td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -38,8 +39,18 @@
         });
     </script>
     <script>
-        function approve(id){
-            alert(id);
+        function approve(id, nama) {
+            let text = `Anda yakin ingin approve ${nama}?`
+            if (confirm(text) == true) {
+                window.location.href = '/submit/approve/' + id
+            }
+        }
+
+        function reject(id, nama) {
+            let text = `Anda yakin ingin reject ${nama}?`
+            if (confirm(text) == true) {
+                window.location.href = '/submit/reject/' + id
+            }
         }
     </script>
 @endsection

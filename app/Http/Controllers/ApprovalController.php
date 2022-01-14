@@ -21,4 +21,22 @@ class ApprovalController extends Controller
             ->get();
         return view('manager.approval', ['datas'=>$datas]);
     }
+
+    public function approve($id){
+        DB::table('CUSTOMER')
+            ->where('ID_CUSTOMER', $id)
+            ->update([
+                'ID_STATUS' => 2
+            ]);
+        return redirect()->back();
+    }
+
+    public function reject($id){
+        DB::table('CUSTOMER')
+            ->where('ID_CUSTOMER', $id)
+            ->update([
+                'ID_STATUS' => 3
+            ]);
+        return redirect()->back();
+    }
 }
