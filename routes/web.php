@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard.calonCus');
+    return redirect()->route('auth.login');
 });
 
 Route::prefix('dashboard/')->group(function(){
@@ -46,5 +46,13 @@ Route::prefix('submit/')->group(function(){
     Route::name('submit.')->group(function(){
         Route::get('approve/{id}',  [ApprovalController::class, 'approve'])->name('approve');
         Route::get('reject/{id}',  [ApprovalController::class, 'reject'])->name('reject');
+    });
+});
+
+Route::prefix('auth/')->group(function(){
+    Route::name('auth.')->group(function(){
+        Route::get('login', function(){
+            return view('auth.login');
+        })->name('login');
     });
 });
