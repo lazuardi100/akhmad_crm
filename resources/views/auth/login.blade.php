@@ -51,7 +51,7 @@
 
                                 <div class="row">
                                     <!-- end col -->
-                                    <form action="" method="post">
+                                    <form action={{route('auth.loggingin')}} method="post">
                                         @csrf
                                         <div class="col-12">
                                             <div class="input-style-1">
@@ -65,6 +65,20 @@
                                                 <input name="pass" type="password" placeholder="Password" />
                                             </div>
                                         </div>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        @if (Session::has('failed'))
+                                            <div class="alert alert-danger">
+                                                {{Session::get('failed')}}
+                                            </div>
+                                        @endif
                                         <div class="col-12">
                                             <div
                                                 class="
@@ -80,7 +94,8 @@
                                             btn-hover
                                             w-100
                                             text-center
-                                          " type="submit">
+                                          "
+                                                    type="submit">
                                                     Sign In
                                                 </button>
                                             </div>

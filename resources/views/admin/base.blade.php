@@ -107,7 +107,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                                     <li>
-                                        <a href='#'> <i class="lni lni-exit"></i> Sign Out
+                                        <a href={{route('auth.logout')}}> <i class="lni lni-exit"></i> Sign Out
                                         </a>
                                     </li>
                                 </ul>
