@@ -9,8 +9,9 @@ class ProductController extends Controller
 {
     public function show(){
         $datas = DB::table('PRODUCT')
-            ->leftJoin('CUSTOMER_PRODUCT', 'CUSTOMER_PRODUCT.ID_PRODUCT', 'PRODUCT.ID_PRODUCT')
-            ->selectRaw('PRODUCT, coalesce(COUNT(CUSTOMER_PRODUCT.ID_CUSTOMER), 0) AS TERJUAL')
+            ->leftJoin('CUSTOMER', 'CUSTOMER.ID_PRODUCT', 'PRODUCT.ID_PRODUCT')
+            ->where('CUSTOMER.ID_STATUS', 2)
+            ->selectRaw('PRODUCT, ISNULL(COUNT(CUSTOMER.ID_CUSTOMER)) AS TERJUAL')
             ->groupBy('PRODUCT')
             ->get();
             

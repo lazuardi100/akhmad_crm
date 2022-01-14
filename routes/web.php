@@ -31,5 +31,6 @@ Route::prefix('submit/')->group(function(){
     Route::name('submit.')->group(function(){
         Route::post('calon_customer',  [CustomerController::class, 'storeCalon'])->name('calon.customer');
         Route::post('product',  [ProductController::class, 'store'])->name('product');
+        Route::post('new_customer',  [CustomerController::class, 'addCustomer'])->name('new.customer');
     });
 });
