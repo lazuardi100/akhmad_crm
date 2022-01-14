@@ -49,6 +49,12 @@
                         <span class="text ml-3">Produk</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="link" href={{route('dashboard.approval')}}>
+                        <i class="ri-shield-check-line"></i>
+                        <span class="text ml-3">Approval</span>
+                    </a>
+                </li>
 
                 <span class="divider">
                     <hr />

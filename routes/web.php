@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -32,5 +33,11 @@ Route::prefix('submit/')->group(function(){
         Route::post('calon_customer',  [CustomerController::class, 'storeCalon'])->name('calon.customer');
         Route::post('product',  [ProductController::class, 'store'])->name('product');
         Route::post('new_customer',  [CustomerController::class, 'addCustomer'])->name('new.customer');
+    });
+});
+//for manager
+Route::prefix('dashboard/')->group(function(){
+    Route::name('dashboard.')->group(function(){
+        Route::get('approval', [ApprovalController::class, 'show'])->name('approval');
     });
 });
