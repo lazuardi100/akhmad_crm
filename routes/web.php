@@ -23,3 +23,9 @@ Route::prefix('dashboard/')->group(function(){
         Route::get('calon', [CustomerController::class, 'showCalon'])->name('calonCus');
     });
 });
+
+Route::prefix('submit/')->group(function(){
+    Route::name('submit.')->group(function(){
+        Route::post('calon_customer',  [CustomerController::class, 'storeCalon'])->name('calon.customer');
+    });
+});
