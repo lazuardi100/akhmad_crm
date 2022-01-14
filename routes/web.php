@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.base');
+    return view('admin.calon_customer');
+});
+
+Route::prefix('dashboard/')->group(function(){
+    Route::name('dashboard.')->group(function(){
+        Route::get('calon', [CustomerController::class, 'showCalon'])->name('calonCus');
+    });
 });
